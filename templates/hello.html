@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <body>
+    <title>Hello there!</title>
+    {% if nickname %}
+      <h1>Hello {% if img %}<img src="{{ img }}" /> {% endif %}{{ nickname }}!</h1>
+    {% else %}
+      <h1>Hello Anonymous!</h1>
+    {% endif %}
+
+    <form action="/post" method="post">
+    {% for f in friends %}
+      <input type="checkbox" name="friends" value="{{ f.id }}"> {{ f.name }}<br>
+    {% endfor %}
+    <input type="hidden" name="name" value="{{ name }}">
+    <input type="submit" value="Submit">
+  </body>
+</html>
+

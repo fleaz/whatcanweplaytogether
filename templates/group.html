@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <body>
+    <title>Hello there!</title>
+
+    {% for f in friends %}
+    <p>
+      {{ friends[f].name }} owns {{ friends[f].count }} games.
+    </p>
+    {% endfor %}
+
+    <br>
+
+    You both can play {{ amount }} games together! \o/
+
+    <ul>
+    {% for game in intersection %}
+      <li> {{ game.name }} </li>
+    {% endfor %}
+    </ul>
+
+  </body>
+</html>
+
