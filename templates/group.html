@@ -1,24 +1,27 @@
-<!doctype html>
-<html>
-  <body>
-    <title>Hello there!</title>
+{% extends "base.html" %}
 
-    {% for f in friends %}
+{% block style %}
+{% endblock %}
+
+{% block content %}
+    {% for name, data in friends.items() %}
     <p>
-      {{ friends[f].name }} owns {{ friends[f].count }} games.
+      {{ name }} owns {{ data.count }} games.
     </p>
     {% endfor %}
 
     <br>
 
-    You both can play {{ amount }} games together! \o/
+    {% if intersection %}
+    This group can play {{ amount }} games together! \o/
 
     <ul>
     {% for game in intersection %}
       <li> {{ game.name }} </li>
     {% endfor %}
     </ul>
+    {% else %}
+    No games in common :(
+    {% endif %}
 
-  </body>
-</html>
-
+{% endblock %}

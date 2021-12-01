@@ -1,14 +1,22 @@
-<html>
-  <head>
-    <link rel="stylesheet" href="https://gitcdn.link/repo/Chalarangelo/mini.css/master/dist/mini-default.css" />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
+{% extends "base.html" %}
 
-  <body>
-  <header><a href="#" class="logo">WhatCanWePlayTogether?</a></header>
-  </body>
 
-  <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
-</html>
+{% block content %}
+<p>
+You have multiple games on Steam, your friends probably even have more, but which of the do you BOTH own? Lets find out...
+</p>
+
+
+<p>
+  To get the correct username (your Steam account has multiple IDs, Names, Nicks and Accountnames... It's a mess!) go to your profile, right click and "Copy Page Url". The last part will be your username
+</p>
+
+<form action="/select" , method="POST">
+  <fieldset>
+    <label for="username">Steam Username</label>
+    <input type="text" name="username" id="username"/>
+    <br>
+    <input type="submit" value="Button" />
+  </fieldset>
+</form>
+{% endblock %}

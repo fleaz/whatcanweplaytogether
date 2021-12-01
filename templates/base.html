@@ -1,0 +1,22 @@
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="container">
+
+      <h1>
+        <a href="#" class="logo">WhatCanWePlayTogether?</a>
+      </h1>
+
+      {% block content %}
+      {% endblock %}
+  </div>
+</body>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</html>

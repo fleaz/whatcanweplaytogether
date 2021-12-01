@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block style %}
+#avatar {
+width: 50px;
+}
+.friend-avatar {
+width: 50px;
+}
+h2{
+  display: block;
+}
+{% endblock %}
+
+{% block content %}
+<img id="avatar" src="{{ img }}" />
+<h2>{{ nickname }}</h2>
+
+<p>Please select at least one person</p>
+<form action="/result" method="post">
+  {% for f in friends %}
+  <input type="checkbox" name="friends" value="{{ f.id }}">
+  <img src="{{ f.avatar }}" class='friend_avater'> {{ f.name }}<br>
+  {% endfor %}
+  <input type="hidden" name="name" value="{{ name }}">
+  <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
